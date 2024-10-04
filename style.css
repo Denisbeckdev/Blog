@@ -1,4 +1,6 @@
 body {
+    font-size: Arial, sans-serif;
+    line-height: 1.6;
     background-color: white;
     margin: 0;
     padding: 0;
@@ -25,31 +27,36 @@ header {
     }
 }
 
-#navegacao {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-@media (max-width: 768px) {
-    #navegacao {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
-
 h1 {
     font-weight: 700;
-    margin-top: 0;
+    margin: 0;
     padding: 10px;
     font-size: 2rem;
+    text-align: center;
 }
 
 @media (max-width: 480px) {
     h1 {
         font-size: 1.5rem;
     }
+}
+
+.destaque {
+    font-weight: bold;
+}
+
+.footer {
+    background-color: rgb(107, 183, 202);
+    text-align: center;
+    padding: 10px 0;
+    color: #fff;
+}
+
+#navegacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 nav ul {
@@ -59,34 +66,22 @@ nav ul {
     padding: 0;
 }
 
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        width: 100%;
-    }
-}
-
 nav ul li {
     margin-left: 20px;
-}
-
-@media (max-width: 768px) {
-    nav ul li {
-        margin: 10px 0;
-    }
 }
 
 nav ul li a {
     text-decoration: none;
     color: rgb(9, 47, 80);
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 1.3rem;
+    transition: color 0.3s ease;
 }
 
-@media (max-width: 480px) {
-    nav ul li a {
-        font-size: 0.9rem;
-    }
+nav ul li a:hover {
+    color: white;
+    cursor: pointer;
+    transform: scale(1.02);
 }
 
 .cards-container {
@@ -104,6 +99,7 @@ nav ul li a {
     padding: 15px;
     flex: 1 1 calc(25% - 20px);
     max-width: calc(25% - 20px);
+    min-width: 200px;
 }
 
 .card:hover {
@@ -111,6 +107,7 @@ nav ul li a {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transform: scale(1.02);
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .card img {
@@ -119,9 +116,33 @@ nav ul li a {
     border-radius: 5px;
 }
 
-h2 {
-    font-size: 1.5rem;
-    margin: 10px 0;
+.card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card-content {
+    padding: 16px;
+}
+
+.views {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.views h2 {
+    margin: 0;
+    font-size: 2rem;  /* Você pode ajustar o tamanho aqui */
+    text-align: left;
+}
+
+.views .contagem {
+    font-size: 0.8rem;
+    color: #333;
+    white-space: nowrap; 
+    margin-left: 15px;
 }
 
 p {
@@ -129,14 +150,58 @@ p {
     color: #252323;
 }
 
+article {
+    padding: 20px;
+    margin: 20px;
+}
+
+.post-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #333;
+    color: #fff;
+}
+
 @media (max-width: 768px) {
-    .card {
-        flex: 1 1 calc(33.33% - 20px);
-        max-width: calc(33.33% - 20px);
+    #navegacao {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
+        width: 100%;
+    }
+
+    nav ul li {
+        width: calc(50% - 10px);
+        text-align: center;
+        margin: 10px 0;
     }
 }
 
 @media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    nav ul li a {
+        font-size: 0.9rem;
+    }
+
     .card {
         flex: 1 1 100%;
         max-width: 100%;

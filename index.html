@@ -9,15 +9,15 @@
 </head>
 
 <body>
-    <header>
+    <header class="header">
         <div id="navegacao">
             <h1>Nome do Blog</h1>
             <nav>
                 <ul>
-                    <li><a href="#">Todas as categorias</a></li>
-                    <li><a href="#">Comunicação</a></li>
-                    <li><a href="#">Relações</a></li>
-                    <li><a href="#">Tecnologia</a></li>
+                    <li><a href="javascript:void(0);" class="destaque">Todas as categorias</a></li>
+                    <li><a href="javascript:void(0);" class="categoria" data-categoria="comunicacao">Comunicação</a></li>
+                    <li><a href="javascript:void(0);" class="categoria" data-categoria="relacoes">Relações</a></li>
+                    <li><a href="javascript:void(0);" class="categoria" data-categoria="tecnologia">Tecnologia</a></li>
                 </ul>
             </nav>
         </div>
@@ -25,38 +25,56 @@
 
     <main>
         <div class="cards-container">
-            <div class="card">
-                <img src="img stakcx.jpg" alt="Imagem Card 1">
-                <h2>First</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique
-                    bibendum.
-                    Donec rutrum sed sem quis venenatis.</p>
-            </div>
-            <div class="card">
-                <img src="img stakcx.jpg" alt="Imagem Card 1">
-                <h2>Second</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique
-                    bibendum.
-                    Donec rutrum sed sem quis venenatis.</p>
-            </div>
-            <div class="card">
-                <img src="img stakcx.jpg" alt="Imagem Card 1">
-                <h2>Third</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique
-                    bibendum.
-                    Donec rutrum sed sem quis venenatis.</p>
-            </div>
-            <div class="card">
-                <img src="img stakcx.jpg" alt="Imagem Card 1">
-                <h2>Fourth</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique
-                    bibendum.
-                    Donec rutrum sed sem quis venenatis.</p>
-            </div>
+            <article class="card">
+                <a href="post1.html">
+                    <img src="stakcx.jpg" alt="Imagem Card 1" class="card-image">
+                    <div class="card-content">
+                        <div class="views"></div>
+                        <h2>First <span class="contagem">- 1 </span><span> Visualizações</span></h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique bibendum. Donec rutrum sed sem quis venenatis.</p>
+                        <p>01/10/2024 - <strong>Inovação</strong></p>
+                    </div>
+                </a>
+            </article>
+            <article class="card comunicacao">
+                <a href="post2.html">
+                    <img src="stakcx.jpg" alt="Imagem Post 2" class="card-image">
+                    <div class="card-content">
+                        <div class="views"></div>
+                        <h2>Second <span class="contagem">- 1 </span><span> Visualizações</span></h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique bibendum. Donec rutrum sed sem quis venenatis.</p>
+                        <p>01/10/2024 - <strong>Inovação</strong></p>
+                    </div>
+                </a>
+            </article>
+            <article class="card relacoes">
+                <a href="post3.html">
+                    <img src="stakcx.jpg" alt="Imagem Post 3" class="card-image">
+                    <div class="card-content">
+                        <div class="views"></div>
+                        <h2>Third <span class="contagem">- 1 </span><span> Visualizações</span></h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique bibendum. Donec rutrum sed sem quis venenatis.</p>
+                        <p>01/10/2024 - <strong>Inovação</strong></p>
+                    </div>
+                </a>
+            </article>
+            <article class="card tecnologia">
+                <a href="post4.html">
+                    <img src="stakcx.jpg" alt="Imagem Post 4" class="card-image">
+                    <div class="card-content">
+                        <div class="views"></div>
+                        <h2>Fourth <span class="contagem">- 1 </span><span> Visualizações</span></h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique bibendum. Donec rutrum sed sem quis venenatis.</p>
+                        <p>01/10/2024 - <strong>Inovação</strong></p>
+                    </div>
+                </a>
+            </article>
         </div>
 
+        <footer class="footer">
+            <p>Todos os direitos reservados &copy; 2024</p>
+        </footer>
     </main>
-
 </body>
 
 </html>
