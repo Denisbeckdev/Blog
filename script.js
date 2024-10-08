@@ -57,10 +57,10 @@ function updateCardViews() {
 
             if (contagemElement) {
                
-                contagemElement.textContent = `${currentViews} visualizações`; 
-;
-
-                contagemElement.style.fontSize = '0.8em';
+                let visualizacaoText = currentViews === 1 ? "Visualização" : "Visualizações";
+                
+                contagemElement.textContent = `${currentViews} ${visualizacaoText}`; 
+                contagemElement.style.fontSize = '1em';
                 contagemElement.style.marginLeft = '5px';
 
                 link.addEventListener('click', function (event) {
@@ -69,7 +69,8 @@ function updateCardViews() {
 
                     window.location.href = link.href;
                 });
-            }
+            } 
+            
         }
     });
 }

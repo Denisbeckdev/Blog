@@ -20,6 +20,11 @@ header {
     border-radius: 5px;
 }
 
+/*header:hover {
+    background-color: rgb(141, 196, 241) ;
+    transform: scale(1.01);
+}*/
+
 @media (max-width: 768px) {
     header {
         margin: 20px auto;
@@ -89,6 +94,7 @@ nav ul li a:hover {
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 10px;
+    
 }
 
 .card {
