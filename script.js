@@ -4,6 +4,36 @@ function getPostKeyFromHref(href) {
     return postKey + '_views';
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    const categorias = document.querySelectorAll('.categoria');
+    const destaque = document.querySelector('.destaque');
+    const cards = document.querySelectorAll('.card');
+
+    function filtrarCategoria(categoriaSelecionada) {
+        cards.forEach(card => {
+            if (categoriaSelecionada === 'todas') {
+                card.style.display = 'block'; 
+            } else if (card.classList.contains(categoriaSelecionada)) {
+                card.style.display = 'block'; 
+            } else {
+                card.style.display = 'none'; 
+            }
+        });
+    }
+
+    destaque.addEventListener('click', function() {
+        filtrarCategoria('todas');
+    });
+
+    categorias.forEach(categoria => {
+        categoria.addEventListener('click', function() {
+            const categoriaSelecionada = this.getAttribute('data-categoria');
+            filtrarCategoria(categoriaSelecionada);
+        });
+    });
+});
+
+
 function getViews(postKey) {
     return parseInt(localStorage.getItem(postKey)) || 0;
 }
@@ -27,7 +57,7 @@ function updateCardViews() {
 
             if (contagemElement) {
                
-                contagemElement.textContent = `- ${currentViews} visualizações`; 
+                contagemElement.textContent = `${currentViews} visualizações`; 
 ;
 
                 contagemElement.style.fontSize = '0.8em';
