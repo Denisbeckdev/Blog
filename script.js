@@ -32,11 +32,20 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // Chama a função apenas uma vez para atualizar as contagens existentes
     updateCardViews();
 
-    if (document.querySelector('.contagem')) {
-        updatePostViews();
-    }
+    cards.forEach(card => {
+        const link = card.querySelector('a');
+        if (link) {
+            link.addEventListener('click', function () {
+                // Atualiza as visualizações apenas quando o card é clicado
+                const postKey = getPostKeyFromHref(link.href);
+                incrementViews(postKey);
+                updateCardViews(); // Atualiza as contagens após o clique
+            });
+        }
+    });
 });
 
 function getViews(postKey) {
@@ -64,23 +73,7 @@ function updateCardViews() {
                 contagemElement.textContent = `${currentViews} ${visualizacaoText}`;
                 contagemElement.style.fontSize = '1em';
                 contagemElement.style.marginLeft = '5px';
-
-                link.addEventListener('click', function (event) {
-                    incrementViews(postKey);
-                    window.location.href = link.href;
-                });
             }
         }
     });
-}
-function updatePostViews() {
-    const postKey = getPostKeyFromHref(window.location.href);
-    incrementViews(postKey);
-
-    const contagemElement = document.querySelector('.contagem');
-    if (contagemElement) {
-        const currentViews = getViews(postKey);
-        let visualizacaoText = currentViews === 1 ? "Visualização" : "Visualizações";
-        contagemElement.textContent = `${currentViews} ${visualizacaoText}`;
-    }
 }
