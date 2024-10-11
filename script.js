@@ -32,17 +32,15 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Chama a função apenas uma vez para atualizar as contagens existentes
     updateCardViews();
 
     cards.forEach(card => {
         const link = card.querySelector('a');
         if (link) {
             link.addEventListener('click', function () {
-                // Atualiza as visualizações apenas quando o card é clicado
                 const postKey = getPostKeyFromHref(link.href);
                 incrementViews(postKey);
-                updateCardViews(); // Atualiza as contagens após o clique
+                updateCardViews();
             });
         }
     });
