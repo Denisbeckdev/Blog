@@ -40,37 +40,36 @@ document.addEventListener('DOMContentLoaded', function () {
             link.addEventListener('click', function () {
                 const postKey = getPostKeyFromHref(link.href);
                 incrementViews(postKey);
-                updateCardViews();
             });
         }
     });
 });
 
 function getViews(postKey) {
-    return parseInt(localStorage.getItem(postKey)) || 0;
+    const viewsData = JSON.parse(localStorage.getItem('viewsData')) || {};
+    return viewsData[postKey] || 0;
 }
 
 function incrementViews(postKey) {
-    let currentViews = getViews(postKey);
-    currentViews += 1;
-    localStorage.setItem(postKey, currentViews);
+    const viewsData = JSON.parse(localStorage.getItem('viewsData')) || {};
+    viewsData[postKey] = (viewsData[postKey] || 0) + 1;
+    localStorage.setItem('viewsData', JSON.stringify(viewsData));
 }
 
 function updateCardViews() {
     const cards = document.querySelectorAll('.card');
+    const viewsData = JSON.parse(localStorage.getItem('viewsData')) || {};
 
     cards.forEach(card => {
         const link = card.querySelector('a');
         if (link) {
             const postKey = getPostKeyFromHref(link.href);
-            const currentViews = getViews(postKey);
+            const currentViews = viewsData[postKey] || 0;
             const contagemElement = card.querySelector('.contagem');
 
             if (contagemElement) {
                 let visualizacaoText = currentViews === 1 ? "Visualização" : "Visualizações";
                 contagemElement.textContent = `${currentViews} ${visualizacaoText}`;
-                contagemElement.style.fontSize = '1em';
-                contagemElement.style.marginLeft = '5px';
             }
         }
     });

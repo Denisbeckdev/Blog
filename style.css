@@ -130,6 +130,11 @@ nav ul li a:hover {
     padding: 16px;
 }
 
+.contagem {
+    font-size: 1em;
+    margin-left: 5px;
+}
+
 .views {
     display: flex;
     justify-content: space-between;
