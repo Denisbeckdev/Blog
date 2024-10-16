@@ -18,6 +18,15 @@ Na página inicial, cada card de postagem exibe a contagem de visualizações co
 ### HTML
 Os cards de postagem são estruturados em HTML, cada um contendo um link para o post completo. Abaixo de cada card, há um elemento destinado a exibir a contagem de visualizações.
 
+### CSS
+O estilo do blog é definido por um arquivo CSS que utiliza práticas modernas de design para garantir uma interface responsiva e agradável. Aqui estão alguns pontos principais sobre o CSS:
+
+Estilo Básico: O estilo padrão utiliza a fonte 'Roboto' e um esquema de cores suave com um fundo branco, garantindo uma boa legibilidade e conforto visual.
+
+Responsividade: Media queries são usadas para adaptar a exibição em diferentes tamanhos de tela, tornando o blog acessível em dispositivos móveis. Por exemplo, o tamanho do cabeçalho e a disposição dos elementos de navegação mudam em telas menores.
+
+Efeitos Visuais: Animações sutis são aplicadas nos cards de postagem para melhorar a experiência do usuário. Ao passar o mouse sobre um card, ele muda de cor e exibe uma sombra mais intensa, indicando que é interativo.
+
 ### JavaScript
 
 O código JavaScript gerencia a lógica de interação do usuário com o blog. As principais funções incluem:
