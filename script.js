@@ -74,3 +74,18 @@ function updateCardViews() {
         }
     });
 }
+
+function exibirContadorVisualizacoes() {
+    const postKey = getPostKeyFromHref(window.location.href);
+    const viewsData = JSON.parse(localStorage.getItem('viewsData')) || {}; 
+    const currentViews = viewsData[postKey] || 0; 
+
+    const contagemElement = document.getElementById('contador-visualizacoes');
+    if (contagemElement) {
+        let visualizacaoText = currentViews === 1 ? "Visualização" : "Visualizações";
+        contagemElement.textContent = `${currentViews} ${visualizacaoText}`;
+    }
+}
+
+
+document.addEventListener('DOMContentLoaded', exibirContadorVisualizacoes);
