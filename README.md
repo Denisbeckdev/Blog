@@ -19,7 +19,9 @@ Na página inicial, cada card de postagem exibe a contagem de visualizações co
 Os cards de postagem são estruturados em HTML, cada um contendo um link para o post completo. Abaixo de cada card, há um elemento destinado a exibir a contagem de visualizações.
 
 ### CSS
-O estilo do blog é definido por um arquivo CSS que utiliza práticas modernas de design para garantir uma interface responsiva e agradável. Aqui estão alguns pontos principais sobre o CSS:
+O estilo do blog é definido por um arquivo CSS que utiliza práticas modernas de design para garantir uma interface responsiva e agradável. 
+
+Aqui estão alguns pontos principais sobre o CSS:
 
 Estilo Básico: O estilo padrão utiliza a fonte 'Roboto' e um esquema de cores suave com um fundo branco, garantindo uma boa legibilidade e conforto visual.
 
